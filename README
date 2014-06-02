@@ -16,7 +16,7 @@ DESCRIPTION
     There's several long standing point of contention surrounding the use of
     bundles.
 
-    A few poingnant ones that bother me are:
+    A few poignant ones that bother me are:
 
     *   Bundles change over time and configuration parameters can change in
         validity
@@ -50,10 +50,10 @@ DESCRIPTION
         local use or local testing.
 
   The Benefits and Method
-    So this command attempts to avoid these problems by seperating the
+    So this command attempts to avoid these problems by separating the
     bundle from its configuration until configuration is wanted updated.
 
-    This means "Dist::Zilla" based distributions DONT have their build
+    This means "Dist::Zilla" based distributions DON'T have their build
     configuration radically changed simply because somebody upgraded a
     bundle, and the configuration is *MORE* local to the distribution
     instead of being more global.

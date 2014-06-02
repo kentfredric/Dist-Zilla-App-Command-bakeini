@@ -4,8 +4,12 @@ use warnings;
 use utf8;
 
 package Dist::Zilla::App::Command::bakeini;
-$Dist::Zilla::App::Command::bakeini::VERSION = '0.001000';
+
+our $VERSION = '0.001000';
+
 # ABSTRACT: bake dist.ini to not need the bundles.
+
+our $AUTHORITY = 'cpan:KENTNL'; # AUTHORITY
 
 use Dist::Zilla::App '-command';
 
@@ -151,7 +155,7 @@ version 0.001000
 
 There's several long standing point of contention surrounding the use of bundles.
 
-A few poingnant ones that bother me are:
+A few poignant ones that bother me are:
 
 =over 4
 
@@ -176,9 +180,9 @@ And the effort of learning and using those tools is high if all you want to do i
 
 =head2 The Benefits and Method
 
-So this command attempts to avoid these problems by seperating the bundle from its configuration until configuration is wanted updated.
+So this command attempts to avoid these problems by separating the bundle from its configuration until configuration is wanted updated.
 
-This means C<Dist::Zilla> based distributions B<DONT> have their build configuration radically changed simply because somebody upgraded a bundle, and the configuration is I<MORE> local to the distribution instead of being more global.
+This means C<Dist::Zilla> based distributions B<DON'T> have their build configuration radically changed simply because somebody upgraded a bundle, and the configuration is I<MORE> local to the distribution instead of being more global.
 
 This means bundle specific configuration demands B<ONLY> need to be satisfied during the baking process, but B<NOT> every subsequent build, and are thus B<NOT> prone to causing a sea of unusable C<dist.ini>s if a bundle gets changed.
 
