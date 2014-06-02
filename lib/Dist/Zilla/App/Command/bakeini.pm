@@ -89,6 +89,17 @@ sub abstract { return 'bake dist.ini from dist.ini.meta' }
 
 
 
+
+
+
+
+
+
+
+
+
+
+
 sub opt_spec {
   return ( [ 'root=s' => 'the root of the dist; defaults to .' ], );
 }
@@ -161,38 +172,49 @@ A few poignant ones that bother me are:
 
 =item * Bundles change over time and configuration parameters can change in validity
 
-For example, I might add a requirement in a later incarnation of a bundle that a given parameter
-be specified. But that creates a confusing backwards compatibility problem for people who merely want to check out and build the code.
+For example, I might add a requirement in a later incarnation of a bundle that a given parameter be specified. But that creates
+a confusing backwards compatibility problem for people who merely want to check out and build the code.
 
 =item * Some contributors tend not to like dealing with bundles due to bundle complexity
 
-Bundles often declare far more dependencies than contributors B<need> to build one specific distribution, and the bundle obscures the visibility of what plugins are being used.
+Bundles often declare far more dependencies than contributors B<need> to build one specific distribution, and the bundle
+obscures the visibility of what plugins are being used.
 
-This also manifests as a difficulty to work around problems produced by bundles such as bundles C<use>-ing broken modules, which is not straight forward to iron out with the C<@Filter> bundle.
+This also manifests as a difficulty to work around problems produced by bundles such as bundles C<use>-ing broken modules,
+which is not straight forward to iron out with the C<@Filter> bundle.
 
-C<@Filter> is also complicated for end users who are not familiar with C<dzil> to use, and C<@Filter> also lacks abilities to re-order plugins if that is necessary to avoid a bug.
+C<@Filter> is also complicated for end users who are not familiar with C<dzil> to use, and C<@Filter> also lacks abilities to
+re-order plugins if that is necessary to avoid a bug.
 
-Additionally, routing configuration to a single plugin within a bundle can be confusing with messy syntax, especially if the bundle doesn't C<do> C<ConfigSlicer> or something like that.
+Additionally, routing configuration to a single plugin within a bundle can be confusing with messy syntax, especially if the
+bundle doesn't C<do> C<ConfigSlicer> or something like that.
 
-And the effort of learning and using those tools is high if all you want to do is I<temporarily> change a build setting for the point of local use or local testing.
+And the effort of learning and using those tools is high if all you want to do is I<temporarily> change a build setting for the
+point of local use or local testing.
 
 =back
 
 =head2 The Benefits and Method
 
-So this command attempts to avoid these problems by separating the bundle from its configuration until configuration is wanted updated.
+So this command attempts to avoid these problems by separating the bundle from its configuration until configuration is wanted
+updated.
 
-This means C<Dist::Zilla> based distributions B<DON'T> have their build configuration radically changed simply because somebody upgraded a bundle, and the configuration is I<MORE> local to the distribution instead of being more global.
+This means C<Dist::Zilla> based distributions B<DON'T> have their build configuration radically changed simply because somebody
+upgraded a bundle, and the configuration is I<MORE> local to the distribution instead of being more global.
 
-This means bundle specific configuration demands B<ONLY> need to be satisfied during the baking process, but B<NOT> every subsequent build, and are thus B<NOT> prone to causing a sea of unusable C<dist.ini>s if a bundle gets changed.
+This means bundle specific configuration demands B<ONLY> need to be satisfied during the baking process, but B<NOT> every
+subsequent build, and are thus B<NOT> prone to causing a sea of unusable C<dist.ini>s if a bundle gets changed.
 
 =head2 The Downsides
 
 The biggest known downside of this approach at present is with much more advanced bundle usage.
 
-Because the bundle itself is being taken out of the loop, that means C<dist.ini> will B<NOT> be able to automatically have new plugins added to it in response to changes in the tree. C<dzil bakeini> will have to be run subsequently to take tree changes into consideration and emit updated configuration.
+Because the bundle itself is being taken out of the loop, that means C<dist.ini> will B<NOT> be able to automatically have new
+plugins added to it in response to changes in the tree. C<dzil bakeini> will have to be run subsequently to take tree changes
+into consideration and emit updated configuration.
 
-And because the bundle itself is being taken out of the loop, that means C<ENV> based controls in bundles will be bound at the time of calling C<dzil bakeini>, which means if you're like C<@ETHER> and have an "Airplane mode", then:
+And because the bundle itself is being taken out of the loop, that means C<ENV> based controls in bundles will be bound at the
+time of calling C<dzil bakeini>, which means if you're like C<@ETHER> and have an "Airplane mode", then:
 
   AIRPLANE=1 dzil build
 
