@@ -105,7 +105,7 @@ sub opt_spec {
 }
 
 sub validate_args {
-  my ( $self, $opt, $args ) = @_;
+  my ( undef, $opt, undef ) = @_;
   require Path::Tiny;
 
   my $root = $opt->root;
@@ -118,7 +118,7 @@ sub validate_args {
 }
 
 sub execute {
-  my ( $self, $opt, $args ) = @_;
+  my ( undef, $opt, undef ) = @_;
   require Path::Tiny;
 
   my $root = $opt->root;
@@ -135,6 +135,7 @@ sub execute {
   print {$out} "; This file is generated from dist.ini.meta by dzil bakeini.\n",
     "; Edit that file or the bundles contained within for long-term changes.\n";
   $state->_store_handle($out);
+  return;
 }
 
 1;
