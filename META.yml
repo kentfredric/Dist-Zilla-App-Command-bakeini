@@ -30,6 +30,10 @@ requires:
   strict: '0'
   utf8: '0'
   warnings: '0'
+resources:
+  bugtracker: https://github.com/kentfredric/Dist-Zilla-App-Command-bakeini/issues
+  homepage: https://github.com/kentfredric/Dist-Zilla-App-Command-bakeini
+  repository: https://github.com/kentfredric/Dist-Zilla-App-Command-bakeini.git
 version: '0.001000'
 x_BuiltWith:
   modules:
