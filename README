@@ -1,0 +1,110 @@
+NAME
+    Dist::Zilla::App::Command::bakeini - bake dist.ini to not need the
+    bundles.
+
+VERSION
+    version 0.001000
+
+SYNOPSIS
+      cp dist.ini dist.ini.meta
+      dzil bakeini
+
+      less dist.ini # no more bundles :D
+
+DESCRIPTION
+  The Quibbles
+    There's several long standing point of contention surrounding the use of
+    bundles.
+
+    A few poignant ones that bother me are:
+
+    *   Bundles change over time and configuration parameters can change in
+        validity
+
+        For example, I might add a requirement in a later incarnation of a
+        bundle that a given parameter be specified. But that creates a
+        confusing backwards compatibility problem for people who merely want
+        to check out and build the code.
+
+    *   Some contributors tend not to like dealing with bundles due to
+        bundle complexity
+
+        Bundles often declare far more dependencies than contributors need
+        to build one specific distribution, and the bundle obscures the
+        visibility of what plugins are being used.
+
+        This also manifests as a difficulty to work around problems produced
+        by bundles such as bundles "use"-ing broken modules, which is not
+        straight forward to iron out with the @Filter bundle.
+
+        @Filter is also complicated for end users who are not familiar with
+        "dzil" to use, and @Filter also lacks abilities to re-order plugins
+        if that is necessary to avoid a bug.
+
+        Additionally, routing configuration to a single plugin within a
+        bundle can be confusing with messy syntax, especially if the bundle
+        doesn't "do" "ConfigSlicer" or something like that.
+
+        And the effort of learning and using those tools is high if all you
+        want to do is *temporarily* change a build setting for the point of
+        local use or local testing.
+
+  The Benefits and Method
+    So this command attempts to avoid these problems by separating the
+    bundle from its configuration until configuration is wanted updated.
+
+    This means "Dist::Zilla" based distributions DON'T have their build
+    configuration radically changed simply because somebody upgraded a
+    bundle, and the configuration is *MORE* local to the distribution
+    instead of being more global.
+
+    This means bundle specific configuration demands ONLY need to be
+    satisfied during the baking process, but NOT every subsequent build, and
+    are thus NOT prone to causing a sea of unusable "dist.ini"s if a bundle
+    gets changed.
+
+  The Downsides
+    The biggest known downside of this approach at present is with much more
+    advanced bundle usage.
+
+    Because the bundle itself is being taken out of the loop, that means
+    "dist.ini" will NOT be able to automatically have new plugins added to
+    it in response to changes in the tree. "dzil bakeini" will have to be
+    run subsequently to take tree changes into consideration and emit
+    updated configuration.
+
+    And because the bundle itself is being taken out of the loop, that means
+    "ENV" based controls in bundles will be bound at the time of calling
+    "dzil bakeini", which means if you're like @ETHER and have an "Airplane
+    mode", then:
+
+      AIRPLANE=1 dzil build
+
+    Won't work on a baked "dist.ini", and you will instead need:
+
+      AIRPLANE=1 dzil bakeini && dzil build
+
+    Though, that could be beneficial too depending on how you use it.
+
+      # Get on the plane
+      AIRPLANE=1 dzil bakeini
+
+      # dzil runs everything in airplane mode now
+      dzil build
+
+      # Get off the plane
+      dzil bakeini
+
+      # dzil runs normally
+      dzil build
+
+AUTHOR
+    Kent Fredric <kentfredric@gmail.com>
+
+COPYRIGHT AND LICENSE
+    This software is copyright (c) 2014 by Kent Fredric
+    <kentfredric@gmail.com>.
+
+    This is free software; you can redistribute it and/or modify it under
+    the same terms as the Perl 5 programming language system itself.
+
