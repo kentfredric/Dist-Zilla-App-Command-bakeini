@@ -12,7 +12,7 @@ our $VERSION = '0.001000';
 our $AUTHORITY = 'cpan:KENTNL'; # AUTHORITY
 
 use Dist::Zilla::App '-command';
-
+## no critic (NamingConventions::ProhibitAmbiguousNames)
 sub abstract { return 'bake dist.ini from dist.ini.meta' }
 
 
@@ -132,8 +132,12 @@ sub execute {
   $state->_load_file($file);
   $state->_expand();
   my $out = $root->child('dist.ini')->openw_utf8;
-  print {$out} "; This file is generated from dist.ini.meta by dzil bakeini.\n",
+  my $return = print {$out} "; This file is generated from dist.ini.meta by dzil bakeini.\n",
     "; Edit that file or the bundles contained within for long-term changes.\n";
+  if ( not $return ) {
+    require Carp;
+    Carp::croak("Error writing to dist.ini! $? $! $@");
+  }
   $state->_store_handle($out);
   return;
 }
