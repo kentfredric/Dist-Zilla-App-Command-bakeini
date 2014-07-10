@@ -142,4 +142,24 @@ sub execute {
   return;
 }
 
+=head1 TIPS AND TRICKS
+
+=head2 C<bakeini> dependent behavior in a bundle
+
+If you want to codify some unique behavior to how your bundle performs under C<dzil bakeini>, ( for instance, to change the C<prereqs> advertised as being C<develop.requires> )
+
+Here, L<< C<::Util::CurrentCmd>|Dist::Zilla::Util::CurrentCmd >> comes in handy:
+
+  use Dist::Zilla::Util::CurrentCmd qw(current_cmd);
+
+  my @config;
+  ...
+  if ( 'bakeini' eq ( current_cmd() || '' ) ) {
+      push @config, [ 'baked dist prereqs', 'Dist::Zilla::Plugin::Prereqs', { 'Foo::Bar' => 2  }];
+  } else {
+    ...
+  }
+
+=cut
+
 1;
