@@ -5,7 +5,7 @@ use utf8;
 
 package Dist::Zilla::App::Command::bakeini;
 
-our $VERSION = '0.001000';
+our $VERSION = '0.001001';
 
 # ABSTRACT: bake dist.ini to not need the bundles.
 
@@ -142,6 +142,26 @@ sub execute {
   return;
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 1;
 
 __END__
@@ -156,7 +176,7 @@ Dist::Zilla::App::Command::bakeini - bake dist.ini to not need the bundles.
 
 =head1 VERSION
 
-version 0.001000
+version 0.001001
 
 =head1 SYNOPSIS
 
@@ -240,6 +260,24 @@ Though, that could be beneficial too depending on how you use it.
 
   # dzil runs normally
   dzil build
+
+=head1 TIPS AND TRICKS
+
+=head2 C<bakeini> dependent behaviour in a bundle
+
+If you want to codify some unique behavior to how your bundle performs under C<dzil bakeini>, ( for instance, to change the C<prereqs> advertised as being C<develop.requires> )
+
+Here, L<< C<::Util::CurrentCmd>|Dist::Zilla::Util::CurrentCmd >> comes in handy:
+
+  use Dist::Zilla::Util::CurrentCmd qw(current_cmd);
+
+  my @config;
+  ...
+  if ( 'bakeini' eq ( current_cmd() || '' ) ) {
+      push @config, [ 'baked dist prereqs', 'Dist::Zilla::Plugin::Prereqs', { 'Foo::Bar' => 2  }];
+  } else {
+    ...
+  }
 
 =head1 AUTHOR
 
