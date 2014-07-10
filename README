@@ -99,7 +99,7 @@ DESCRIPTION
       dzil build
 
 TIPS AND TRICKS
-  "bakeini" dependent behaviour in a bundle
+  "bakeini" dependent behavior in a bundle
     If you want to codify some unique behavior to how your bundle performs
     under "dzil bakeini", ( for instance, to change the "prereqs" advertised
     as being "develop.requires" )

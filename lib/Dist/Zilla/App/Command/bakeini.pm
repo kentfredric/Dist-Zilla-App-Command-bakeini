@@ -263,7 +263,7 @@ Though, that could be beneficial too depending on how you use it.
 
 =head1 TIPS AND TRICKS
 
-=head2 C<bakeini> dependent behaviour in a bundle
+=head2 C<bakeini> dependent behavior in a bundle
 
 If you want to codify some unique behavior to how your bundle performs under C<dzil bakeini>, ( for instance, to change the C<prereqs> advertised as being C<develop.requires> )
 
