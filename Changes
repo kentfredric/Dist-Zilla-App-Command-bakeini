@@ -1,9 +1,9 @@
 Release history for Dist-Zilla-App-Command-bakeini
 
-0.001001 2014-07-10T11:57:30Z
+0.001001 2014-07-10T12:02:20Z
  [Dependencies::Stats]
  - Dependencies changed since 0.001000, see misc/*.deps* for details
- - develop: ↑1
+ - develop: -1 (suggests: +2 -1)
 
  [Documentation]
  - Add tips and tricks section indicating how to make bakeini-specific plugins.
