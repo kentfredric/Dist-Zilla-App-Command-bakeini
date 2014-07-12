@@ -3,6 +3,10 @@
  - Dist::Zilla::App::Command::bakeini 0.001000
  - Dist::Zilla::PluginBundle::Author::KENTNL 2.016001
 
+ [Added / test requires]
+ - Dist::Zilla::App::Tester
+ - Test::Differences
+
  [Removed / develop requires]
  - Dist::Zilla::PluginBundle::Author::KENTNL 2.014001
 
