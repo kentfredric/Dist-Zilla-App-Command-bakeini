@@ -126,9 +126,11 @@ my $static_prereqs = do { my $x = {
                                      'Test::More' => '1.001003'
                                    },
                    'requires' => {
+                                   'Dist::Zilla::App::Tester' => '0',
                                    'ExtUtils::MakeMaker' => '0',
                                    'File::Spec::Functions' => '0',
                                    'List::Util' => '0',
+                                   'Test::Differences' => '0',
                                    'Test::More' => '0.89',
                                    'version' => '0'
                                  }

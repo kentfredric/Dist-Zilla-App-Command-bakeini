@@ -97,9 +97,11 @@
             "Test::More" : "1.001003"
          },
          "requires" : {
+            "Dist::Zilla::App::Tester" : "0",
             "ExtUtils::MakeMaker" : "0",
             "File::Spec::Functions" : "0",
             "List::Util" : "0",
+            "Test::Differences" : "0",
             "Test::More" : "0.89",
             "version" : "0"
          }
@@ -131,6 +133,7 @@
          "Carp" : "1.34",
          "Dist::Zilla::App" : "5.019",
          "Dist::Zilla::App::Command::bakeini" : "0.001000",
+         "Dist::Zilla::App::Tester" : "5.019",
          "Dist::Zilla::Plugin::Authority" : "1.006",
          "Dist::Zilla::Plugin::AutoPrereqs" : "5.019",
          "Dist::Zilla::Plugin::BumpVersionAfterRelease" : "0.002",
@@ -181,6 +184,7 @@
          "Pod::Coverage::TrustPod" : "0.100003",
          "Test::CPAN::Changes" : "0.28",
          "Test::CPAN::Meta" : "0.23",
+         "Test::Differences" : "0.62",
          "Test::Kwalitee" : "1.18",
          "Test::More" : "1.001003",
          "Test::Pod" : "1.48",
