@@ -23,6 +23,7 @@ t/00-compile/lib_Dist_Zilla_App_Command_bakeini_pm.t
 t/00-report-prereqs.t
 t/01-basic.t
 t/02-show-abstract.t
+t/03-nodistinimeta.t
 weaver.ini
 xt/author/critic.t
 xt/release/cpan-changes.t
