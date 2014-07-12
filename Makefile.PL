@@ -29,13 +29,15 @@ my %WriteMakefileArgs = (
     "warnings" => 0
   },
   "TEST_REQUIRES" => {
+    "Dist::Zilla::App::Tester" => 0,
     "ExtUtils::MakeMaker" => 0,
     "File::Spec::Functions" => 0,
     "List::Util" => 0,
+    "Test::Differences" => 0,
     "Test::More" => "0.89",
     "version" => 0
   },
-  "VERSION" => "0.001000",
+  "VERSION" => "0.001001",
   "test" => {
     "TESTS" => "t/*.t t/00-compile/*.t"
   }
@@ -45,11 +47,13 @@ my %WriteMakefileArgs = (
 my %FallbackPrereqs = (
   "Carp" => 0,
   "Dist::Zilla::App" => 0,
+  "Dist::Zilla::App::Tester" => 0,
   "Dist::Zilla::Util::ExpandINI" => 0,
   "ExtUtils::MakeMaker" => 0,
   "File::Spec::Functions" => 0,
   "List::Util" => 0,
   "Path::Tiny" => 0,
+  "Test::Differences" => 0,
   "Test::More" => "0.89",
   "strict" => 0,
   "utf8" => 0,

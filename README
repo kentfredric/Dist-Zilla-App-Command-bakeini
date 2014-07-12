@@ -3,7 +3,7 @@ NAME
     bundles.
 
 VERSION
-    version 0.001000
+    version 0.001001
 
 SYNOPSIS
       cp dist.ini dist.ini.meta
@@ -97,6 +97,24 @@ DESCRIPTION
 
       # dzil runs normally
       dzil build
+
+TIPS AND TRICKS
+  "bakeini" dependent behavior in a bundle
+    If you want to codify some unique behavior to how your bundle performs
+    under "dzil bakeini", ( for instance, to change the "prereqs" advertised
+    as being "develop.requires" )
+
+    Here, "::Util::CurrentCmd" comes in handy:
+
+      use Dist::Zilla::Util::CurrentCmd qw(current_cmd);
+
+      my @config;
+      ...
+      if ( 'bakeini' eq ( current_cmd() || '' ) ) {
+          push @config, [ 'baked dist prereqs', 'Dist::Zilla::Plugin::Prereqs', { 'Foo::Bar' => 2  }];
+      } else {
+        ...
+      }
 
 AUTHOR
     Kent Fredric <kentfredric@gmail.com>
