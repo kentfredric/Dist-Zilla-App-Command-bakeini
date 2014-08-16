@@ -213,19 +213,6 @@
       },
       "plugins" : [
          {
-            "class" : "Dist::Zilla::Plugin::Bootstrap::lib",
-            "config" : {
-               "Dist::Zilla::Role::Bootstrap" : {
-                  "distname" : "Dist-Zilla-App-Command-bakeini",
-                  "fallback" : "1",
-                  "try_built" : null,
-                  "try_built_method" : "mtime"
-               }
-            },
-            "name" : "Bootstrap::lib",
-            "version" : "1.000005"
-         },
-         {
             "class" : "Dist::Zilla::Plugin::MetaConfig",
             "name" : "@Author::KENTNL/MetaConfig",
             "version" : "5.020"
