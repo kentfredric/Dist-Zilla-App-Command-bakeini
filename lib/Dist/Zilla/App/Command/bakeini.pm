@@ -5,100 +5,16 @@ use utf8;
 
 package Dist::Zilla::App::Command::bakeini;
 
-our $VERSION = '0.001001';
+our $VERSION = '0.001002';
 
 # ABSTRACT: bake dist.ini to not need the bundles.
 
 our $AUTHORITY = 'cpan:KENTNL'; # AUTHORITY
 
 use Dist::Zilla::App '-command';
+
 ## no critic (NamingConventions::ProhibitAmbiguousNames)
 sub abstract { return 'bake dist.ini from dist.ini.meta' }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 sub opt_spec {
   return ( [ 'root=s' => 'the root of the dist; defaults to .' ], );
@@ -142,26 +58,6 @@ sub execute {
   return;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 1;
 
 __END__
@@ -176,7 +72,7 @@ Dist::Zilla::App::Command::bakeini - bake dist.ini to not need the bundles.
 
 =head1 VERSION
 
-version 0.001001
+version 0.001002
 
 =head1 SYNOPSIS
 
