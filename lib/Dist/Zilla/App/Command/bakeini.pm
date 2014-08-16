@@ -12,8 +12,53 @@ our $VERSION = '0.001002';
 # AUTHORITY
 
 use Dist::Zilla::App '-command';
+
 ## no critic (NamingConventions::ProhibitAmbiguousNames)
 sub abstract { return 'bake dist.ini from dist.ini.meta' }
+
+sub opt_spec {
+  return ( [ 'root=s' => 'the root of the dist; defaults to .' ], );
+}
+
+sub validate_args {
+  my ( undef, $opt, undef ) = @_;
+  require Path::Tiny;
+
+  my $root = $opt->root;
+  $root = Path::Tiny::path($root) if defined $root;
+  $root = Path::Tiny::cwd()       if not defined $root;
+
+  return if $root->child('dist.ini.meta')->is_file;
+  require Carp;
+  Carp::croak("dist.ini.meta not found in $root");
+}
+
+sub execute {
+  my ( undef, $opt, undef ) = @_;
+  require Path::Tiny;
+
+  my $root = $opt->root;
+  $root = Path::Tiny::path($root) if defined $root;
+  $root = Path::Tiny::cwd()       if not defined $root;
+
+  my $file = $root->child('dist.ini.meta');
+
+  require Dist::Zilla::Util::ExpandINI;
+  my $state = Dist::Zilla::Util::ExpandINI->new();
+  $state->_load_file($file);
+  $state->_expand();
+  my $out = $root->child('dist.ini')->openw_utf8;
+  my $return = print {$out} "; This file is generated from dist.ini.meta by dzil bakeini.\n",
+    "; Edit that file or the bundles contained within for long-term changes.\n";
+  if ( not $return ) {
+    require Carp;
+    Carp::croak("Error writing to dist.ini! $? $! $@");
+  }
+  $state->_store_handle($out);
+  return;
+}
+
+1;
 
 =head1 SYNOPSIS
 
@@ -98,50 +143,6 @@ Though, that could be beneficial too depending on how you use it.
   # dzil runs normally
   dzil build
 
-=cut
-
-sub opt_spec {
-  return ( [ 'root=s' => 'the root of the dist; defaults to .' ], );
-}
-
-sub validate_args {
-  my ( undef, $opt, undef ) = @_;
-  require Path::Tiny;
-
-  my $root = $opt->root;
-  $root = Path::Tiny::path($root) if defined $root;
-  $root = Path::Tiny::cwd()       if not defined $root;
-
-  return if $root->child('dist.ini.meta')->is_file;
-  require Carp;
-  Carp::croak("dist.ini.meta not found in $root");
-}
-
-sub execute {
-  my ( undef, $opt, undef ) = @_;
-  require Path::Tiny;
-
-  my $root = $opt->root;
-  $root = Path::Tiny::path($root) if defined $root;
-  $root = Path::Tiny::cwd()       if not defined $root;
-
-  my $file = $root->child('dist.ini.meta');
-
-  require Dist::Zilla::Util::ExpandINI;
-  my $state = Dist::Zilla::Util::ExpandINI->new();
-  $state->_load_file($file);
-  $state->_expand();
-  my $out = $root->child('dist.ini')->openw_utf8;
-  my $return = print {$out} "; This file is generated from dist.ini.meta by dzil bakeini.\n",
-    "; Edit that file or the bundles contained within for long-term changes.\n";
-  if ( not $return ) {
-    require Carp;
-    Carp::croak("Error writing to dist.ini! $? $! $@");
-  }
-  $state->_store_handle($out);
-  return;
-}
-
 =head1 TIPS AND TRICKS
 
 =head2 C<bakeini> dependent behavior in a bundle
@@ -161,5 +162,3 @@ Here, L<< C<::Util::CurrentCmd>|Dist::Zilla::Util::CurrentCmd >> comes in handy:
   }
 
 =cut
-
-1;
