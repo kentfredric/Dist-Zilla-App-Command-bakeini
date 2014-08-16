@@ -12,93 +12,9 @@ our $VERSION = '0.001002';
 our $AUTHORITY = 'cpan:KENTNL'; # AUTHORITY
 
 use Dist::Zilla::App '-command';
+
 ## no critic (NamingConventions::ProhibitAmbiguousNames)
 sub abstract { return 'bake dist.ini from dist.ini.meta' }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 sub opt_spec {
   return ( [ 'root=s' => 'the root of the dist; defaults to .' ], );
@@ -141,26 +57,6 @@ sub execute {
   $state->_store_handle($out);
   return;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 1;
 
