@@ -105,7 +105,7 @@ Here, [`::Util::CurrentCmd`](https://metacpan.org/pod/Dist::Zilla::Util::Current
 
 # AUTHOR
 
-Kent Fredric <kentfredric@gmail.com>
+Kent Fredric <kentnl@cpan.org>
 
 # COPYRIGHT AND LICENSE
 
