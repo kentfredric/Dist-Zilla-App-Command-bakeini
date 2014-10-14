@@ -1,7 +1,7 @@
 ---
 abstract: 'bake dist.ini to not need the bundles.'
 author:
-  - 'Kent Fredric <kentfredric@gmail.com>'
+  - 'Kent Fredric <kentnl@cpan.org>'
 build_requires:
   Dist::Zilla::App::Tester: '0'
   ExtUtils::MakeMaker: '0'
