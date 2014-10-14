@@ -3,7 +3,7 @@ NAME
     bundles.
 
 VERSION
-    version 0.001002
+    version 0.001003
 
 SYNOPSIS
       cp dist.ini dist.ini.meta
@@ -117,7 +117,7 @@ TIPS AND TRICKS
       }
 
 AUTHOR
-    Kent Fredric <kentfredric@gmail.com>
+    Kent Fredric <kentnl@cpan.org>
 
 COPYRIGHT AND LICENSE
     This software is copyright (c) 2014 by Kent Fredric

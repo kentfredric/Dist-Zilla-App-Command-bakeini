@@ -11,7 +11,7 @@ use ExtUtils::MakeMaker ;
 
 my %WriteMakefileArgs = (
   "ABSTRACT" => "bake dist.ini to not need the bundles.",
-  "AUTHOR" => "Kent Fredric <kentfredric\@gmail.com>",
+  "AUTHOR" => "Kent Fredric <kentnl\@cpan.org>",
   "CONFIGURE_REQUIRES" => {
     "ExtUtils::MakeMaker" => 0
   },
@@ -35,7 +35,7 @@ my %WriteMakefileArgs = (
     "Test::Differences" => 0,
     "Test::More" => "0.89"
   },
-  "VERSION" => "0.001002",
+  "VERSION" => "0.001003",
   "test" => {
     "TESTS" => "t/*.t t/00-compile/*.t"
   }
