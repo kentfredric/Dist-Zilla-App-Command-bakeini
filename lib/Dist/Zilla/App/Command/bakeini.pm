@@ -5,7 +5,7 @@ use utf8;
 
 package Dist::Zilla::App::Command::bakeini;
 
-our $VERSION = '0.001003';
+our $VERSION = '0.001004';
 
 # ABSTRACT: bake dist.ini to not need the bundles.
 
