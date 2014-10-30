@@ -1,5 +1,17 @@
 Release history for Dist-Zilla-App-Command-bakeini
 
+0.001004 2014-10-30T23:29:28Z 6170f9a
+ [Dependencies::Stats]
+ - Dependencies changed since 0.001003, see misc/*.deps* for details
+ - configure: +1 (recommends: ↑1)
+ - develop: +3 -1 (recommends: +1, suggests: ↑2)
+ - runtime: ↓1 -1
+ - test: +1 (recommends: ↑2)
+
+ [Internals]
+ - stop requiring utf8 ( optimisation )
+ - 5.006 is now minimum.
+
 0.001003 2014-10-14T17:57:42Z 203f4a7
  [Dependencies::Stats]
  - Dependencies changed since 0.001002, see misc/*.deps* for details

@@ -1,11 +1,10 @@
-use 5.008;    # utf8
+use 5.006;
 use strict;
 use warnings;
-use utf8;
 
 package Dist::Zilla::App::Command::bakeini;
 
-our $VERSION = '0.001003';
+our $VERSION = '0.001004';
 
 # ABSTRACT: bake dist.ini to not need the bundles.
 
@@ -72,7 +71,7 @@ Dist::Zilla::App::Command::bakeini - bake dist.ini to not need the bundles.
 
 =head1 VERSION
 
-version 0.001003
+version 0.001004
 
 =head1 SYNOPSIS
 
