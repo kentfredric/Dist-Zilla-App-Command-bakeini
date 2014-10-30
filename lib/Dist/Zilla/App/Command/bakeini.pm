@@ -4,7 +4,7 @@ use warnings;
 
 package Dist::Zilla::App::Command::bakeini;
 
-our $VERSION = '0.001004';
+our $VERSION = '0.001005';
 
 # ABSTRACT: bake dist.ini to not need the bundles.
 
