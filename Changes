@@ -1,6 +1,6 @@
 Release history for Dist-Zilla-App-Command-bakeini
 
-0.001004 2014-10-30T13:10:09Z bcd0262
+0.001004 2014-10-30T13:16:53Z ac341a1
  [Dependencies::Stats]
  - Dependencies changed since 0.001003, see misc/*.deps* for details
  - configure: +1 (recommends: ↑1)
