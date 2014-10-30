@@ -20,7 +20,7 @@
          },
          "requires" : {
             "ExtUtils::MakeMaker" : "0",
-            "perl" : "5.008"
+            "perl" : "5.006"
          }
       },
       "develop" : {
@@ -94,9 +94,8 @@
             "Dist::Zilla::App" : "0",
             "Dist::Zilla::Util::ExpandINI" : "0",
             "Path::Tiny" : "0",
-            "perl" : "5.008",
+            "perl" : "5.006",
             "strict" : "0",
-            "utf8" : "0",
             "warnings" : "0"
          }
       },
@@ -112,7 +111,7 @@
             "File::Spec" : "0",
             "Test::Differences" : "0",
             "Test::More" : "0.89",
-            "perl" : "5.008"
+            "perl" : "5.006"
          }
       }
    },
@@ -146,7 +145,7 @@
          "Dist::Zilla::Plugin::Author::KENTNL::RecommendFixes" : "0.004000",
          "Dist::Zilla::Plugin::Authority" : "1.009",
          "Dist::Zilla::Plugin::AutoPrereqs" : "5.022",
-         "Dist::Zilla::Plugin::BumpVersionAfterRelease" : "0.004",
+         "Dist::Zilla::Plugin::BumpVersionAfterRelease" : "0.005",
          "Dist::Zilla::Plugin::ConfirmRelease" : "5.022",
          "Dist::Zilla::Plugin::CopyFilesFromBuild" : "0.103510",
          "Dist::Zilla::Plugin::Git::Check" : "2.025",
@@ -177,7 +176,7 @@
          "Dist::Zilla::Plugin::ReadmeAnyFromPod" : "0.142470",
          "Dist::Zilla::Plugin::ReadmeFromPod" : "0.21",
          "Dist::Zilla::Plugin::RewriteVersion::Sanitized" : "0.001004",
-         "Dist::Zilla::Plugin::RunExtraTests" : "0.022",
+         "Dist::Zilla::Plugin::RunExtraTests" : "0.023",
          "Dist::Zilla::Plugin::Test::CPAN::Changes" : "0.008",
          "Dist::Zilla::Plugin::Test::Compile::PerFile" : "0.003000",
          "Dist::Zilla::Plugin::Test::EOL" : "0.14",
@@ -203,7 +202,6 @@
          "Test::Pod" : "1.48",
          "Test::Pod::Coverage" : "1.10",
          "strict" : "1.08",
-         "utf8" : "1.14",
          "warnings" : "1.26"
       },
       "perl" : {
@@ -606,7 +604,7 @@
                }
             },
             "name" : "@Author::KENTNL/RunExtraTests",
-            "version" : "0.022"
+            "version" : "0.023"
          },
          {
             "class" : "Dist::Zilla::Plugin::TestRelease",
@@ -688,7 +686,7 @@
          {
             "class" : "Dist::Zilla::Plugin::BumpVersionAfterRelease",
             "name" : "@Author::KENTNL/BumpVersionAfterRelease",
-            "version" : "0.004"
+            "version" : "0.005"
          },
          {
             "class" : "Dist::Zilla::Plugin::Git::Commit",
