@@ -16,14 +16,15 @@ use Dist::Zilla::App '-command';
 sub abstract { return 'bake dist.ini from dist.ini.meta' }
 
 sub opt_spec {
+  ## no critic (RegularExpressions::ProhibitFixedStringMatches,RegularExpressions::RequireLineBoundaryMatching)
+
   return (
     [ 'root=s' => 'the root of the dist; defaults to .' ],
     [
       'comments=s' => 'include all, authordeps or none comments; defaults to all',
       {
         default => 'all',
-        ## no critic (RegularExpressions::ProhibitFixedStringMatches)
-        regex => qr/\A(?:all|authordeps|none)\z/sx,
+        regex   => qr/\A(?:all|authordeps|none)\z/sx,
       },
     ],
   );
