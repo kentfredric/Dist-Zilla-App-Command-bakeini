@@ -23,7 +23,7 @@ sub opt_spec {
       {
         default => 'all',
         ## no critic (RegularExpressions::ProhibitFixedStringMatches)
-        regex => qr/\A(?:all|authordeps|none)\z/msx,
+        regex => qr/\A(?:all|authordeps|none)\z/sx,
       },
     ],
   );
