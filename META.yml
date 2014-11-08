@@ -26,7 +26,7 @@ provides:
 requires:
   Carp: '0'
   Dist::Zilla::App: '0'
-  Dist::Zilla::Util::ExpandINI: '0'
+  Dist::Zilla::Util::ExpandINI: '0.003000'
   Path::Tiny: '0'
   perl: '5.006'
   strict: '0'

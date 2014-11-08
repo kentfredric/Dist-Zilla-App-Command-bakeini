@@ -43,6 +43,7 @@ sub execute {
   my $file = $root->child('dist.ini.meta');
 
   require Dist::Zilla::Util::ExpandINI;
+  Dist::Zilla::Util::ExpandINI->VERSION('0.003000');
   my $state = Dist::Zilla::Util::ExpandINI->new();
   $state->_load_file($file);
   $state->_expand();
