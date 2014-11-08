@@ -17,9 +17,11 @@ sub abstract { return 'bake dist.ini from dist.ini.meta' }
 
 sub opt_spec {
   return (
-    [ 'root=s'    => 'the root of the dist; defaults to .' ],
-    [ 'comments=s' => 'include all, authordeps or none comments; defaults to all',
-                      {default => 'all', regex => qr/^(?:all|authordeps|none)$/ }],
+    [ 'root=s' => 'the root of the dist; defaults to .' ],
+    [
+      'comments=s' => 'include all, authordeps or none comments; defaults to all',
+      { default => 'all', regex => qr/^(?:all|authordeps|none)$/ }
+    ],
   );
 }
 
@@ -54,6 +56,7 @@ sub execute {
   my $out = $root->child('dist.ini')->openw_utf8;
   my $return = print {$out} "; This file is generated from dist.ini.meta by dzil bakeini.\n",
     "; Edit that file or the bundles contained within for long-term changes.\n";
+
   if ( not $return ) {
     require Carp;
     Carp::croak("Error writing to dist.ini! $? $! $@");
