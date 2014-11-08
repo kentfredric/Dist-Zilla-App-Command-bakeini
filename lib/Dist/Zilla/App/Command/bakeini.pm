@@ -16,7 +16,11 @@ use Dist::Zilla::App '-command';
 sub abstract { return 'bake dist.ini from dist.ini.meta' }
 
 sub opt_spec {
-  return ( [ 'root=s' => 'the root of the dist; defaults to .' ], );
+  return (
+    [ 'root=s'    => 'the root of the dist; defaults to .' ],
+    [ 'comments=s' => 'include all, authordeps or none comments; defaults to all',
+                      {default => 'all', regex => qr/^(?:all|authordeps|none)$/ }],
+  );
 }
 
 sub validate_args {
@@ -43,7 +47,7 @@ sub execute {
   my $file = $root->child('dist.ini.meta');
 
   require Dist::Zilla::Util::ExpandINI;
-  my $state = Dist::Zilla::Util::ExpandINI->new();
+  my $state = Dist::Zilla::Util::ExpandINI->new( comments => $opt->comments );
   $state->_load_file($file);
   $state->_expand();
   my $out = $root->child('dist.ini')->openw_utf8;
