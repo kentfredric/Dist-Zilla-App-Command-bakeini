@@ -20,7 +20,11 @@ sub opt_spec {
     [ 'root=s' => 'the root of the dist; defaults to .' ],
     [
       'comments=s' => 'include all, authordeps or none comments; defaults to all',
-      { default => 'all', regex => qr/^(?:all|authordeps|none)$/ }
+      {
+        default => 'all',
+        ## no critic (RegularExpressions::ProhibitFixedStringMatches)
+        regex => qr/\A(?:all|authordeps|none)\z/msx,
+      },
     ],
   );
 }
