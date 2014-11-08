@@ -26,6 +26,7 @@ t/00-report-prereqs.t
 t/01-basic.t
 t/02-show-abstract.t
 t/03-nodistinimeta.t
+t/04-comment-control.t
 weaver.ini
 xt/author/critic.t
 xt/author/eol.t
