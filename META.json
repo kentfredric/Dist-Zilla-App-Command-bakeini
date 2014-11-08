@@ -885,8 +885,5 @@
          "version" : "5.024"
       }
    },
-   "x_authority" : "cpan:KENTNL",
-   "x_contributors" : [
-      "Harley Pig <harleypig@gmail.com>"
-   ]
+   "x_authority" : "cpan:KENTNL"
 }

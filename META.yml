@@ -627,5 +627,3 @@ x_Dist_Zilla:
       is_trial: '0'
     version: '5.024'
 x_authority: cpan:KENTNL
-x_contributors:
-  - 'Harley Pig <harleypig@gmail.com>'
