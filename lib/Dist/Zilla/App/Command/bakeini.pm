@@ -187,6 +187,24 @@ Here, L<< C<::Util::CurrentCmd>|Dist::Zilla::Util::CurrentCmd >> comes in handy:
     ...
   }
 
+=head1 PARAMETERS
+
+=head2 C<--comments>
+
+C<--comments> allows to control which comments are copied into the target C<dist.ini>
+
+=head3 C<all>
+
+B<DEFAULT> Inject all comments regardless
+
+=head3 C<authordeps>
+
+Inject all comments that are C<Dist::Zilla> C<AuthorDeps>
+
+=head3 C<none>
+
+Inject no comments.
+
 =head1 AUTHOR
 
 Kent Fredric <kentnl@cpan.org>

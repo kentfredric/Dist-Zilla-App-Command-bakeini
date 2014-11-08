@@ -116,6 +116,20 @@ TIPS AND TRICKS
         ...
       }
 
+PARAMETERS
+  "--comments"
+    "--comments" allows to control which comments are copied into the target
+    "dist.ini"
+
+   "all"
+    DEFAULT Inject all comments regardless
+
+   "authordeps"
+    Inject all comments that are "Dist::Zilla" "AuthorDeps"
+
+   "none"
+    Inject no comments.
+
 AUTHOR
     Kent Fredric <kentnl@cpan.org>
 
