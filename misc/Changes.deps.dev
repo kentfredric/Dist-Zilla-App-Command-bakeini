@@ -1,6 +1,13 @@
 This file contains changes to DEVELOPMENT dependencies only ( both REQUIRED and OPTIONAL )
 
-0.001004
+0.002000
+ [Changed / develop recommends]
+ - Test::More 1.001008 → 1.001009
+
+ [Changed / develop suggests]
+ - Dist::Zilla::App::Command::bakeini 0.001003 → 0.001004
+
+0.001004 2014-10-30T23:29:28Z
  [Added / develop recommends]
  - Test::More 1.001008
 

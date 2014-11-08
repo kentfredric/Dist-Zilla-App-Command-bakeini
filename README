@@ -3,7 +3,7 @@ NAME
     bundles.
 
 VERSION
-    version 0.001004
+    version 0.002000
 
 SYNOPSIS
       cp dist.ini dist.ini.meta
@@ -115,6 +115,20 @@ TIPS AND TRICKS
       } else {
         ...
       }
+
+PARAMETERS
+  "--comments"
+    "--comments" allows to control which comments are copied into the target
+    "dist.ini"
+
+   "all"
+    DEFAULT Inject all comments regardless
+
+   "authordeps"
+    Inject all comments that are "Dist::Zilla" "AuthorDeps"
+
+   "none"
+    Inject no comments.
 
 AUTHOR
     Kent Fredric <kentnl@cpan.org>
