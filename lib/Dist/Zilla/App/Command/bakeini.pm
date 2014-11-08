@@ -16,7 +16,18 @@ use Dist::Zilla::App '-command';
 sub abstract { return 'bake dist.ini from dist.ini.meta' }
 
 sub opt_spec {
-  return ( [ 'root=s' => 'the root of the dist; defaults to .' ], );
+  ## no critic (RegularExpressions::ProhibitFixedStringMatches,RegularExpressions::RequireLineBoundaryMatching)
+
+  return (
+    [ 'root=s' => 'the root of the dist; defaults to .' ],
+    [
+      'comments=s' => 'include all, authordeps or none comments; defaults to all',
+      {
+        default => 'all',
+        regex   => qr/\A(?:all|authordeps|none)\z/sx,
+      },
+    ],
+  );
 }
 
 sub validate_args {
@@ -43,12 +54,14 @@ sub execute {
   my $file = $root->child('dist.ini.meta');
 
   require Dist::Zilla::Util::ExpandINI;
-  my $state = Dist::Zilla::Util::ExpandINI->new();
+  Dist::Zilla::Util::ExpandINI->VERSION('0.003000');
+  my $state = Dist::Zilla::Util::ExpandINI->new( comments => $opt->comments );
   $state->_load_file($file);
   $state->_expand();
   my $out = $root->child('dist.ini')->openw_utf8;
   my $return = print {$out} "; This file is generated from dist.ini.meta by dzil bakeini.\n",
     "; Edit that file or the bundles contained within for long-term changes.\n";
+
   if ( not $return ) {
     require Carp;
     Carp::croak("Error writing to dist.ini! $? $! $@");
@@ -159,5 +172,23 @@ Here, L<< C<::Util::CurrentCmd>|Dist::Zilla::Util::CurrentCmd >> comes in handy:
   } else {
     ...
   }
+
+=head1 PARAMETERS
+
+=head2 C<--comments>
+
+C<--comments> allows to control which comments are copied into the target C<dist.ini>
+
+=head3 C<all>
+
+B<DEFAULT> Inject all comments regardless
+
+=head3 C<authordeps>
+
+Inject all comments that are C<Dist::Zilla> C<AuthorDeps>
+
+=head3 C<none>
+
+Inject no comments.
 
 =cut

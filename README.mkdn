@@ -4,7 +4,7 @@ Dist::Zilla::App::Command::bakeini - bake dist.ini to not need the bundles.
 
 # VERSION
 
-version 0.001005
+version 0.002000
 
 # SYNOPSIS
 
@@ -102,6 +102,24 @@ Here, [`::Util::CurrentCmd`](https://metacpan.org/pod/Dist::Zilla::Util::Current
     } else {
       ...
     }
+
+# PARAMETERS
+
+## `--comments`
+
+`--comments` allows to control which comments are copied into the target `dist.ini`
+
+### `all`
+
+**DEFAULT** Inject all comments regardless
+
+### `authordeps`
+
+Inject all comments that are `Dist::Zilla` `AuthorDeps`
+
+### `none`
+
+Inject no comments.
 
 # AUTHOR
 
