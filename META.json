@@ -16,7 +16,7 @@
    "prereqs" : {
       "configure" : {
          "recommends" : {
-            "ExtUtils::MakeMaker" : "7.04"
+            "ExtUtils::MakeMaker" : "7.05_07"
          },
          "requires" : {
             "ExtUtils::MakeMaker" : "0",
@@ -86,7 +86,7 @@
          },
          "suggests" : {
             "Dist::Zilla::App::Command::bakeini" : "0.002000",
-            "Dist::Zilla::PluginBundle::Author::KENTNL" : "2.022005"
+            "Dist::Zilla::PluginBundle::Author::KENTNL" : "2.023000"
          }
       },
       "runtime" : {
@@ -103,7 +103,7 @@
       "test" : {
          "recommends" : {
             "CPAN::Meta" : "2.120900",
-            "ExtUtils::MakeMaker" : "7.04",
+            "ExtUtils::MakeMaker" : "7.05_07",
             "Test::More" : "1.301001_097"
          },
          "requires" : {
@@ -172,7 +172,7 @@
                }
             },
             "name" : "@Author::KENTNL/MetaProvides::Package",
-            "version" : "2.002000"
+            "version" : "2.003000"
          },
          {
             "class" : "Dist::Zilla::Plugin::MetaData::BuiltWith",
@@ -257,6 +257,11 @@
             "class" : "Dist::Zilla::Plugin::Manifest",
             "name" : "@Author::KENTNL/Manifest",
             "version" : "5.031"
+         },
+         {
+            "class" : "Dist::Zilla::Plugin::Author::KENTNL::TravisCI",
+            "name" : "@Author::KENTNL/Author::KENTNL::TravisCI",
+            "version" : "0.001000"
          },
          {
             "class" : "Dist::Zilla::Plugin::CopyFilesFromBuild",
@@ -747,11 +752,6 @@
             },
             "name" : "Prereqs",
             "version" : "5.031"
-         },
-         {
-            "class" : "Dist::Zilla::Plugin::Author::KENTNL::TravisCI",
-            "name" : "Author::KENTNL::TravisCI",
-            "version" : "0.001000"
          },
          {
             "class" : "Dist::Zilla::Plugin::FinderCode",
