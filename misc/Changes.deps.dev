@@ -1,6 +1,8 @@
 This file contains changes to DEVELOPMENT dependencies only ( both REQUIRED and OPTIONAL )
 
-0.002005
+0.002006
+
+0.002005 2015-04-12T06:49:58Z
  [Added / develop requires]
  - Dist::Zilla::Plugin::Author::KENTNL::TravisCI 0.001002
  - Dist::Zilla::Plugin::Prereqs::Upgrade
