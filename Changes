@@ -1,5 +1,16 @@
 Release history for Dist-Zilla-App-Command-bakeini
 
+0.002005 2015-04-12T06:49:58Z e518885
+ [Dependencies::Stats]
+ - Dependencies changed since 0.002000, see misc/*.deps* for details
+ - configure: (recommends: ↓1)
+ - develop: +3 ↑3 -1 (recommends: ↓1, suggests: ↑2)
+ - runtime: (recommends: +1)
+ - test: +3 -1 (recommends: ↓2)
+
+ [Minor]
+ - Tests rearchitected in dztest
+
 0.002000 2014-11-08T15:20:00Z 4fbaf17
  [Dependencies::Stats]
  - Dependencies changed since 0.001004, see misc/*.deps* for details

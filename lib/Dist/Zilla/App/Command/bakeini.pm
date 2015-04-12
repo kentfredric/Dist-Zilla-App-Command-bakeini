@@ -4,7 +4,7 @@ use warnings;
 
 package Dist::Zilla::App::Command::bakeini;
 
-our $VERSION = '0.002000';
+our $VERSION = '0.002005';
 
 # ABSTRACT: bake dist.ini to not need the bundles.
 
@@ -84,7 +84,7 @@ Dist::Zilla::App::Command::bakeini - bake dist.ini to not need the bundles.
 
 =head1 VERSION
 
-version 0.002000
+version 0.002005
 
 =head1 SYNOPSIS
 
@@ -94,6 +94,22 @@ version 0.002000
   less dist.ini # no more bundles :D
 
 =head1 DESCRIPTION
+
+C<bakeini> is an C<App::Command> module for C<Dist::Zilla> that enables one to have two versions
+of their C<dist.ini>, one which contains their bundle, and the other which is generated from the
+first in a static and portable way, without requiring the bundle to be present.
+
+This allows contributors and test targets to have a mostly "static" configuration that is less
+prone to randomly breaking your distributions every time you change something significant in your bundle.
+
+It also allows contributors to only need the dependencies they B<really> need, not the super-set
+of dependencies your bundle probably implies.
+
+And at the same time, you still have the flexibility and power you normally have with a centralized
+configuration stored in a bundle, which you can roll out on demand, instead of having the roll out
+automatically propagate every time the bundle gets updated.
+
+=head1 DISCUSSION
 
 =head2 The Quibbles
 
@@ -211,7 +227,7 @@ Kent Fredric <kentnl@cpan.org>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2014 by Kent Fredric <kentfredric@gmail.com>.
+This software is copyright (c) 2015 by Kent Fredric <kentfredric@gmail.com>.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
