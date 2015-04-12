@@ -26,7 +26,6 @@ my %WriteMakefileArgs = (
     "warnings" => 0
   },
   "TEST_REQUIRES" => {
-    "Dist::Zilla::App::Tester" => 0,
     "Dist::Zilla::Util::Test::KENTNL" => "1.005000",
     "ExtUtils::MakeMaker" => 0,
     "File::Spec" => 0,
@@ -45,7 +44,6 @@ my %WriteMakefileArgs = (
 my %FallbackPrereqs = (
   "Carp" => 0,
   "Dist::Zilla::App" => 0,
-  "Dist::Zilla::App::Tester" => 0,
   "Dist::Zilla::Util::ExpandINI" => "0.003000",
   "Dist::Zilla::Util::Test::KENTNL" => "1.005000",
   "ExtUtils::MakeMaker" => 0,

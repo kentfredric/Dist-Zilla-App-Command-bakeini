@@ -2,16 +2,12 @@ use strict;
 use warnings;
 
 use Test::More;
-use Dist::Zilla::App::Tester;
+use Dist::Zilla::Util::Test::KENTNL 1.005000 qw( dztest );
 
 # ABSTRACT: ensure abstract { } is called.
 
-use Path::Tiny qw( path );
-
-my $cwd     = Path::Tiny->cwd;
-my $tempdir = Path::Tiny->tempdir;
-
-my $result = test_dzil( "$tempdir", ['commands'] );
+my $test = dztest;
+my $result = $test->run_command( ['commands'] );
 ok( ref $result, 'self test executed' );
 is( $result->error,     undef, 'no errors' );
 is( $result->exit_code, 0,     'exit == 0' );
