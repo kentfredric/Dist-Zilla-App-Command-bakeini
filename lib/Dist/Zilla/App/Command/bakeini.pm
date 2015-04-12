@@ -109,7 +109,7 @@ And at the same time, you still have the flexibility and power you normally have
 configuration stored in a bundle, which you can roll out on demand, instead of having the roll out
 automatically propagate every time the bundle gets updated.
 
-=head2 DISCUSSION
+=head1 DISCUSSION
 
 =head2 The Quibbles
 
