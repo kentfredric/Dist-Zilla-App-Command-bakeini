@@ -1,5 +1,7 @@
 Release history for Dist-Zilla-App-Command-bakeini
 
+0.002006 2015-04-12T06:50:52Z ee670f8
+
 0.002005 2015-04-12T06:49:58Z e518885
  [Dependencies::Stats]
  - Dependencies changed since 0.002000, see misc/*.deps* for details
