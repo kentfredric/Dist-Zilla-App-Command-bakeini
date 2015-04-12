@@ -95,6 +95,22 @@ version 0.002001
 
 =head1 DESCRIPTION
 
+C<bakeini> is an C<App::Command> module for C<Dist::Zilla> that enables one to have two versions
+of their C<dist.ini>, one which contains their bundle, and the other which is generated from the
+first in a static and portable way, without requiring the bundle to be present.
+
+This allows contributors and test targets to have a mostly "static" configuration that is less
+prone to randomly breaking your dists every time you change something significant in your bundle.
+
+It also allows contributors to only need the dependencies they B<really> need, not the superset
+of dependencies your bundle probably implies.
+
+And at the same time, you still have the flexibility and power you normally have with a centralised
+configuration stored in a bundle, which you can roll out on demand, instead of having the roll out
+automatically propagate every time the bundle gets updated.
+
+=head2 DISCUSSION
+
 =head2 The Quibbles
 
 There's several long standing point of contention surrounding the use of bundles.
