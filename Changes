@@ -6,7 +6,10 @@ Release history for Dist-Zilla-App-Command-bakeini
  - configure: (recommends: ↓1)
  - develop: +3 ↑3 -1 (recommends: ↓1, suggests: ↑2)
  - runtime: (recommends: +1)
- - test: (recommends: ↓2)
+ - test: +3 -1 (recommends: ↓2)
+
+ [Minor]
+ - Tests rearchitected in dztest
 
 0.002000 2014-11-08T15:20:00Z 4fbaf17
  [Dependencies::Stats]
