@@ -100,12 +100,12 @@ of their C<dist.ini>, one which contains their bundle, and the other which is ge
 first in a static and portable way, without requiring the bundle to be present.
 
 This allows contributors and test targets to have a mostly "static" configuration that is less
-prone to randomly breaking your dists every time you change something significant in your bundle.
+prone to randomly breaking your distributions every time you change something significant in your bundle.
 
-It also allows contributors to only need the dependencies they B<really> need, not the superset
+It also allows contributors to only need the dependencies they B<really> need, not the super-set
 of dependencies your bundle probably implies.
 
-And at the same time, you still have the flexibility and power you normally have with a centralised
+And at the same time, you still have the flexibility and power you normally have with a centralized
 configuration stored in a bundle, which you can roll out on demand, instead of having the roll out
 automatically propagate every time the bundle gets updated.
 
