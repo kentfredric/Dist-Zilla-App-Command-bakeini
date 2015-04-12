@@ -36,6 +36,9 @@ This file contains ALL changes in dependencies in both REQUIRED / OPTIONAL depen
  [Removed / develop requires]
  - Dist::Zilla::Plugin::ReadmeFromPod
 
+ [Removed / test requires]
+ - Dist::Zilla::App::Tester
+
 0.002000 2014-11-08T15:20:00Z
  [Changed / configure recommends]
  - ExtUtils::MakeMaker 7.00 → 7.02
