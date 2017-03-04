@@ -4,7 +4,7 @@ Dist::Zilla::App::Command::bakeini - bake dist.ini to not need the bundles.
 
 # VERSION
 
-version 0.002006
+version 0.002007
 
 # SYNOPSIS
 
