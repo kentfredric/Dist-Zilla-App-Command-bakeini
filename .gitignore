@@ -1,2 +1,3 @@
-.build
-Dist-Zilla-App-Command-bakeini-*
+/.build
+/Dist-Zilla-App-Command-bakeini-*
+/tmp/
