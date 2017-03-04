@@ -24,7 +24,7 @@ name: Dist-Zilla-App-Command-bakeini
 provides:
   Dist::Zilla::App::Command::bakeini:
     file: lib/Dist/Zilla/App/Command/bakeini.pm
-    version: '0.002006'
+    version: '0.002007'
 recommends:
   Path::Tiny: '0.058'
 requires:
@@ -39,4 +39,4 @@ resources:
   bugtracker: https://github.com/kentnl/Dist-Zilla-App-Command-bakeini/issues
   homepage: https://github.com/kentnl/Dist-Zilla-App-Command-bakeini
   repository: https://github.com/kentnl/Dist-Zilla-App-Command-bakeini.git
-version: '0.002006'
+version: '0.002007'

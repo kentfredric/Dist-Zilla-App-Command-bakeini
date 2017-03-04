@@ -1,5 +1,7 @@
 Release history for Dist-Zilla-App-Command-bakeini
 
+0.002007 2017-03-04T06:05:08Z 457d08c
+
 0.002006 2017-03-04T05:46:16Z 0c7ac74
  [BugFix]
  - Avoid test failures on 5.26 w/ -Ddefault_inc_excludes_dot

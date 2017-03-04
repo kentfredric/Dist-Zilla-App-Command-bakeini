@@ -1,6 +1,8 @@
 This file contains changes to DEVELOPMENT dependencies only ( both REQUIRED and OPTIONAL )
 
-0.002006
+0.002007
+
+0.002006 2017-03-04T05:46:16Z
  [Added / develop requires]
  - Dist::Zilla::Plugin::MetaYAML::Minimal
  - Dist::Zilla::Plugin::RemovePrereqs::Provided
